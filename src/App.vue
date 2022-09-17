@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import { useHead } from '@vueuse/head'
+
+useHead({
+  title: 'Default title',
+  meta: [
+    {
+      name: 'description',
+      content: 'This is a DEFAULT description',
+    },
+    {
+      name: 'other-stuff',
+      content: 'This is some OTHER stuff',
+    },
+  ],
+})
+</script>
+
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
