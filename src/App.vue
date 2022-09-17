@@ -17,30 +17,29 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="wrapper">
+    <div class="logos">
+      <img src="@/assets/vite.svg" class="logo" alt="Vite logo" />
+      <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
+    </div>
+    <RouterView />
   </div>
-  <HelloWorld msg="Vite + Vue" />
-
-  <!-- ROUTER OUTLET -->
-  <RouterView />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<style scoped lang="postcss">
+.wrapper {
+  @apply flex flex-col items-center justify-center h-screen gap-8;
+  & .logos {
+    @apply flex items-center gap-8;
+    & .logo {
+      @apply w-48 p-6 will-change-[filter];
+      &:hover {
+        @apply drop-shadow-2xl shadow-[#646cff];
+      }
+      &.vue:hover {
+        @apply drop-shadow-2xl shadow-[#42b883];
+      }
+    }
+  }
 }
 </style>
