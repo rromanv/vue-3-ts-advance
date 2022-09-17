@@ -13,6 +13,6 @@ export default defineConfig({
   test: {
     environment: 'jsdom', // or happy-dom ???
     globals: true,
-    setupFiles: [path.resolve(__dirname, 'test/setup.ts')],
+    setupFiles: [path.resolve(__dirname, './src/test/setup.ts')],
   },
 })
